@@ -18,7 +18,7 @@ public interface APIService {
 
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://127.0.0.1/")
+            .baseUrl("http://192.168.100.15/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
