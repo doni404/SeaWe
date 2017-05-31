@@ -47,7 +47,11 @@
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
+<<<<<<< HEAD
           <last-edited>1.8</last-edited>
+=======
+          <last-edited>Android API 10 Platform</last-edited>
+>>>>>>> f8d99f7987b0b1e1c431bbe99f2d4bc65180e99f
           <splitter-proportions>
             <option name="proportions">
               <list>

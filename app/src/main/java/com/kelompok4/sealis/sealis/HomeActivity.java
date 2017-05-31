@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
 
         DownloadContentTask task = new DownloadContentTask(this);
        task.execute(new String[]
-                       {"http://172.30.35.13/papb/test.php"}
+                       {"http://192.168.100.15/papb/test.php"}
        );
         // Call<ArrayList<Stasiun>> call = apiService.loadStasiun();
         // call.enqueue(new Callback<ArrayList<Stasiun>>() {
