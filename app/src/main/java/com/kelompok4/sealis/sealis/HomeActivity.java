@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.kelompok4.sealis.sealis.model.restclient.RestClient;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,11 +44,27 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        RestClient.initialize();
+        RestClient.wilayahService.getData().enqueue(new Callback<com.kelompok4.sealis.sealis.model.Response>() {
+            @Override
+            public void onResponse(Call<com.kelompok4.sealis.sealis.model.Response> call, Response<com.kelompok4.sealis.sealis.model.Response> response) {
+                if (response.isSuccessful()){
+                    com.kelompok4.sealis.sealis.model.Response responseData = response.body();
+                    responseData.toString();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<com.kelompok4.sealis.sealis.model.Response> call, Throwable t) {
+
+            }
+        });
+
         DownloadContentTask task = new DownloadContentTask(this);
        task.execute(new String[]
                        {"http://172.30.35.13/papb/test.php"}
        );
-        APIService apiService = APIService.retrofit.create(APIService.class);
         // Call<ArrayList<Stasiun>> call = apiService.loadStasiun();
         // call.enqueue(new Callback<ArrayList<Stasiun>>() {
         //     @Override
