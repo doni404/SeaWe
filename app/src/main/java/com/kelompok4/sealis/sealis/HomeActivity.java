@@ -45,25 +45,25 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        RestClient.initialize();
-        RestClient.wilayahService.getData().enqueue(new Callback<com.kelompok4.sealis.sealis.model.Response>() {
-            @Override
-            public void onResponse(Call<com.kelompok4.sealis.sealis.model.Response> call, Response<com.kelompok4.sealis.sealis.model.Response> response) {
-                if (response.isSuccessful()){
-                    com.kelompok4.sealis.sealis.model.Response responseData = response.body();
-                    responseData.toString();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<com.kelompok4.sealis.sealis.model.Response> call, Throwable t) {
-
-            }
-        });
+//        RestClient.initialize();
+//        RestClient.wilayahService.getData().enqueue(new Callback<com.kelompok4.sealis.sealis.model.Response>() {
+//            @Override
+//            public void onResponse(Call<com.kelompok4.sealis.sealis.model.Response> call, Response<com.kelompok4.sealis.sealis.model.Response> response) {
+//                if (response.isSuccessful()){
+//                    com.kelompok4.sealis.sealis.model.Response responseData = response.body();
+//                    responseData.toString();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<com.kelompok4.sealis.sealis.model.Response> call, Throwable t) {
+//
+//            }
+//        });
 
         DownloadContentTask task = new DownloadContentTask(this);
        task.execute(new String[]
-                       {"http://192.168.100.15/papb/test.php"}
+                       {"http://buangdisini.com/papb/test.php"}
        );
         // Call<ArrayList<Stasiun>> call = apiService.loadStasiun();
         // call.enqueue(new Callback<ArrayList<Stasiun>>() {

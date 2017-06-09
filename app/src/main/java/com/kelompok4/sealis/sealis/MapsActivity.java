@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (mMap != null) {
                 DownloadContentTask task = new DownloadContentTask(this);
                 task.execute (new String[ ]
-                                {"http://192.168.100.15/papb/webservice.php?idstasiun="+stasiunID}
+                                {"http://buangdisini.com/papb/webservice.php?idstasiun="+stasiunID}
                 );
             }
         }
